@@ -1,0 +1,82 @@
+<!-- Typong ! and pressing enter populates the file with the essential html code to get started -->
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!-- add a viewport here so that the application is responsive -->
+ 
+ 
+<!-- Think links the styling sheet to the html file         -->
+        <link href="cssfile.css" rel="stylesheet">
+ 
+<!-- This links the javascrip file to this html file         -->
+        <script defer src="javascript.js"></script>
+        <title>Coding Quiz Challenge</title>
+    </head>
+    <body>
+
+
+
+
+<!-- Container that will contain the questions and answers -->
+    <div class="container">
+
+      
+<!-- Question container where the question will appear, also has a hide "class" so it can be hidden for other views, such as the start view     -->
+        <div id="question-container" class="hide">
+
+                
+
+<!-- Question container, where the questions will be populated from the JS file             -->
+          <div id="question">Question</div>
+
+          <div class="score">
+                  
+                Score: <span id="score-card"></span>
+        
+                </div>
+
+
+ <!-- Answer container for the answer buttons, also added a class of btn-grid so it can styled with css, grid is because the answers will appear in a grid format  -->
+          <div id="answer-buttons" class="btn-grid">
+
+ <!-- four buttons as all the questions will provide 4 multiple choice answers for the user to choose from -->
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+
+
+          </div>
+        </div>
+
+<!-- Controls section is for the controls of the application, where the user can click start and next         -->
+        <div class="controls">
+
+<!-- The start button also has a btn class so we can apply styles to it same other styles in other buttons             -->
+          <button id="start-btn" class="start-btn btn">Start</button>
+
+ <!-- hide class is added here so that the button can be hidden when it does not apply          -->
+          <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+      </div>
+            
+
+    
+    
+</body>
+</html>
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        

@@ -1,0 +1,144 @@
+
+/* This makes the width and hights easier to style */
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  :root {
+
+/* Defining the --hue css variable for the background colour to change when the wrong or the correct answer is chosen     */
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 150;
+  }
+  
+  
+  body {
+
+/* Here we are defining a CSS variable and it is set to neutral for when we don't have anything selected as an answer */
+    --hue: var(--hue-neutral);
+
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+
+/* To centre the quiz box in the middle of the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+/* Setting the default background color for when there is no answer chosen, note: hsl(hue, saturation, lightness) */
+    background-color: hsl(var(--hue), 100%, 35%);
+  }
+  
+/* Setting classes for when the correct or oncorrect answers are chosen   */
+  body.correct {
+    --hue: var(--hue-correct);
+  }
+  
+  body.wrong {
+    --hue: var(--hue-wrong);
+  }
+  
+/* Setting the Styling for the qustions container */
+  .container {
+
+/* Setting the width of the container     */
+    width: 800px;
+
+/* Maximum width of the container so that the content inside the container doesn't overflow into the page     */
+    max-width: 80%;
+
+/* Background colour of the container */
+    background-color: white;
+ 
+/* Applying the border radius with curved corners     */
+    border-radius: 5px;
+/* Padding is added so that the content inside the container doesn't touch the edges of the border     */
+    padding: 10px;
+/* Styling box shadow affect to make the box look nicer in the middle of the screen, x offset is the 0 so it is the same around the whole box, y offset is also 0 to be the same around the whole box, the blurr is 10 pixels this makes it a faded out box shadow, the spread is 2 pixels defines how far out from the container the shadow exceeds       */
+    box-shadow: 0 0 10px 2px;
+
+
+  }
+
+  /* Styling for the answers button grid */
+  .btn-grid {    
+    display: grid;
+  /* To make the answers line up in two colomnxs   */
+    grid-template-columns: repeat(2, auto);
+  /* To make the buttons not pushed up gainst each other, adding some space between the buttons   */
+    gap: 10px;
+/* To space out the buttons from the next button and the question above the answer buttons */
+    margin: 20px 0;
+  }
+  
+ /* Generic button class that will be applied to all the buttons on the page  */
+  .btn {
+ /* css variable set to neutral which will be the color of the answer buttons when no answer is selected       */
+    --hue: var(--hue-neutral);
+ /* Defining the button border color        */
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+/* Background color of the button is defined here note: hsl(hue, saturation, lightness) */
+    background-color: hsl(var(--hue), 100%, 50%);
+/* Setting the buttons corners to be rounded     */
+    border-radius: 5px;
+    padding: 5px 10px;
+/* Text color of the text inside the buttons     */
+    color: white;
+/* Removing the default set outline around the buttons     */
+    outline: none;
+/* Setting the font size of the answer buttons */
+    font-size: 16px;
+  }
+  
+/* Adding a hover affect which changes the color of the button border when the user hovers over it   */
+  .btn:hover {
+    border-color: black;
+  }
+ 
+  
+  .btn.correct {
+    --hue: var(--hue-correct);
+/* The white text inside the box is hard to see when the answer is correct with a green background, this changes the color of the text to black when a correct answer is selected */
+    color: black;
+  }
+  
+  .btn.wrong {
+    --hue: var(--hue-wrong);
+  }
+ 
+ /* Styling for the start and next buttons  */
+  .start-btn, .next-btn {
+ /* The start and next buttons should be bigger then the answer buttons and are set to a higher rem here      */
+    font-size: 1.5rem;   
+    font-weight: bold;
+ /* Padding also user here to make the next and start buttons bigger    */
+    padding: 10px 20px;
+  }
+ 
+ /* Centering the controls (start and next buttons) in the middle of the quiz box  */
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+ /* To hide the questions and the answer buttons at the beginning of the quiz  */
+  .hide {
+    display: none;
+  }
+  
+
+/* Sets the styling for the score */
+.score{
+
+float: left;
+width: 100%;
+font-style: italic;
+color: blueviolet;
+  }
